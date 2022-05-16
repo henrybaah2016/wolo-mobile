@@ -32,7 +32,8 @@ Map<String, String> english() {
     'courses': 'Courses',
     'viewAll': 'View all',
     'learnFromBasics': 'Learn from Basics',
-    'fullUIUXDesigns': 'Full UI/UX Designs',
+    'fullUIUXDesigns': 'Complete Courses',
+    'getStarted':'Get Started',
     'knowMore': 'Know More',
     'searchForCourseTopic': 'Search for course, topic, etc.',
     'UXDesignDescription':
@@ -147,5 +148,13 @@ Map<String, String> english() {
         'The Non-Technical Person\'s Guide to Building Products and Apps logo',
     'searchFive': 'The Complete App Design Course - UX, UI and Design Thinking',
     'searchSix': 'Mobile App Design from scratch with Sketch 3 : UX and UI',
+    'introTextOne': 'Prepare for exam',
+    'introTextTwo': 'Complete Courses',
+    'courseTitle': 'Core Mathematics ( for SHS 1)',
+    'coursePreparedOne': 'Core Mathematics ( for SHS 1)',
+    'coursePreparedTwo': 'Social Studies  (for   SHS 2)',
+    'coursePreparedThree': 'Integrated Science ( for SHS 1)',
+    'coursePreparedFour': 'English Language ( for  SHS 1)',
+
   };
 }

@@ -11,6 +11,7 @@ import 'package:kdemy/Components/textfield.dart';
 import 'package:kdemy/Components/title_row.dart';
 import 'package:kdemy/Locale/locales.dart';
 import 'package:kdemy/Models/category_model.dart';
+import 'package:kdemy/Models/search_model.dart';
 import 'package:kdemy/Routes/routes.dart';
 import 'package:kdemy/Theme/colors.dart';
 
@@ -76,12 +77,11 @@ class _HomePageState extends State<HomePage> {
     var theme = Theme.of(context);
     var locale = AppLocalizations.of(context)!;
     List<TopCategory> topCategories = [
-      TopCategory(locale.design, '125', Assets.topCategory1),
-      TopCategory(locale.business, '221', Assets.topCategory2),
-      TopCategory(locale.development, '199', Assets.topCategory3),
-      TopCategory(locale.photography, '201', Assets.topCategory4),
-      TopCategory(locale.fitness, '112', Assets.topCategory5),
-      TopCategory(locale.music, '156', Assets.topCategory1),
+      TopCategory('Core Mathematics', '125', Assets.topCategory1),
+      TopCategory('English Language', '221', Assets.topCategory2),
+      TopCategory('Integrated Science', '201', Assets.topCategory4),
+      TopCategory('Social Studies', '199', Assets.topCategory3),
+
     ];
 
     return Builder(
@@ -90,6 +90,13 @@ class _HomePageState extends State<HomePage> {
           _loadingAnchoredBanner = true;
           _createAnchoredBanner(context);
         }
+
+        List<SearchModel> searches = [
+          SearchModel(Assets.NewCourseTwo, locale.coursePreparedOne, 20.00),
+          SearchModel(Assets.NewCourseFour, locale.coursePreparedFour, 40.00),
+          SearchModel(Assets.NewCourseOne, locale.coursePreparedTwo, 26.00),
+          SearchModel(Assets.NewCourseThree, locale.coursePreparedThree, 25.00),
+        ];
         return Scaffold(
           backgroundColor: textFieldColor,
           drawer: AppDrawer(),
@@ -104,13 +111,26 @@ class _HomePageState extends State<HomePage> {
             actions: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16),
+                    const EdgeInsets.symmetric(vertical: 8.0, horizontal: 1),
                 child: InkWell(
                   onTap: () {
                     Navigator.pushNamed(context, PageRoutes.notifications);
                   },
                   child: Icon(
                     Icons.notifications,
+                    color: theme.scaffoldBackgroundColor,
+                  ),
+                ),
+              ),
+              Padding(
+                padding:
+                const EdgeInsets.symmetric(vertical: 8.0, horizontal: 1),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pushNamed(context, PageRoutes.notifications);
+                  },
+                  child: Icon(
+                    Icons.more_vert,
                     color: theme.scaffoldBackgroundColor,
                   ),
                 ),
@@ -124,7 +144,7 @@ class _HomePageState extends State<HomePage> {
                 clipBehavior: Clip.none,
                 children: [
                   Image.asset(
-                    Assets.headerImage,
+                    Assets.woloIntroThree,
                     height: 250,
                     width: MediaQuery.of(context).size.width,
                     fit: BoxFit.cover,
@@ -140,11 +160,11 @@ class _HomePageState extends State<HomePage> {
                             text: TextSpan(
                               children: [
                                 TextSpan(
-                                  text: locale.learnFromBasics,
+                                  text: locale.introTextOne,
                                   style: Theme.of(context).textTheme.headline6,
                                 ),
                                 TextSpan(
-                                  text: '\n' + locale.fullUIUXDesigns!,
+                                  text: '\n' + locale.introTextTwo!,
                                   style: Theme.of(context).textTheme.headline5,
                                 ),
                               ],
@@ -155,7 +175,7 @@ class _HomePageState extends State<HomePage> {
                             flex: 6,
                             child: FadedScaleAnimation(
                               TextButton(
-                                child: Text(locale.knowMore!),
+                                child: Text(locale.getStarted!),
                                 onPressed: () {
                                   Navigator.pushNamed(
                                       context, PageRoutes.search);
@@ -188,7 +208,7 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 12),
               TitleRow(
                 locale.ongoingCourses,
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.only(top:16,right:16,left:16),
                 onTap: () {
                   Navigator.pushNamed(context, PageRoutes.ongoingCourses);
                 },
@@ -210,8 +230,8 @@ class _HomePageState extends State<HomePage> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
                           children: [
-                            Text(locale.uxDesignDescription!),
-                            Text('Sam Smith', style: theme.textTheme.subtitle2),
+                            Text(locale.courseTitle!),
+                            Text('GH30.00', style: theme.textTheme.subtitle2),
                             Text(
                               '35 % ' + locale.complete!,
                               textAlign: TextAlign.end,
@@ -240,7 +260,7 @@ class _HomePageState extends State<HomePage> {
                     top: 20,
                     bottom: 20,
                     child: Image.asset(
-                      Assets.uxDesignImage,
+                      Assets.courseCoverMath,
                       width: 130,
                     ),
                   ),
@@ -249,24 +269,71 @@ class _HomePageState extends State<HomePage> {
               SizedBox(
                 height: 10,
               ),
-              if (_anchoredBanner != null)
-                Container(
-                  width: _anchoredBanner!.size.width.toDouble(),
-                  height: _anchoredBanner!.size.height.toDouble(),
-                  child: AdWidget(ad: _anchoredBanner!),
-                ),
+              // if (_anchoredBanner != null)
+              //   Container(
+              //     width: _anchoredBanner!.size.width.toDouble(),
+              //     height: _anchoredBanner!.size.height.toDouble(),
+              //     child: AdWidget(ad: _anchoredBanner!),
+              //   ),
               TitleRow(
                 locale.topCategories,
-                padding: EdgeInsets.all(16),
+                padding: EdgeInsets.only(left:16,right:16),
                 onTap: () {
                   Navigator.pushNamed(context, PageRoutes.categoryPage,
                       arguments: 'All Categories');
                 },
               ),
-              CategoriesList(
-                topCategories,
-                padding: EdgeInsets.symmetric(horizontal: 16),
+              Container(
+                margin: EdgeInsets.only(bottom:15),
+                child: CategoriesList(
+                  topCategories,
+                  padding: EdgeInsets.symmetric(horizontal: 16),
+                ),
               ),
+              TitleRow(
+                'New Course',
+                padding: EdgeInsets.only(left:16,right:16),
+                onTap: () {
+                  Navigator.pushNamed(context, PageRoutes.categoryPage,
+                      arguments: 'New Course');
+                },
+              ),
+
+              Container(
+                height: 164,
+                margin: EdgeInsets.only(left:16,right:16,bottom:16),
+                child: ListView.builder(
+                  physics: BouncingScrollPhysics(),
+                  itemCount: searches.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => Container(
+                    width: MediaQuery.of(context).size.width / 2.5,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        FadedScaleAnimation(
+                          Image.asset(
+                            searches[index].image,
+                            height: 110,
+                            width: MediaQuery.of(context).size.width / 2.8,
+                          ),
+                        ),
+                        Text(
+                          searches[index].title!,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                        Text(
+                          '\GH${searches[index].price}',
+                          style: theme.textTheme.caption,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+
             ],
           ),
         );

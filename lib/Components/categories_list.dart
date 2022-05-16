@@ -32,7 +32,7 @@ class CategoriesList extends StatelessWidget {
         },
         child: FadedScaleAnimation(
           Container(
-              padding: EdgeInsetsDirectional.only(start: 12, top: 44),
+              padding: EdgeInsetsDirectional.only(start: 12, top: 10),
               decoration: BoxDecoration(
                   image: DecorationImage(image: AssetImage(list[index].image))),
               child: RichText(

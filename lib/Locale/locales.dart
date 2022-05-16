@@ -160,6 +160,9 @@ class AppLocalizations {
   String? get fullUIUXDesigns {
     return _localizedValues[locale.languageCode]!['fullUIUXDesigns'];
   }
+ String? get getStarted {
+    return _localizedValues[locale.languageCode]!['getStarted'];
+  }
 
   String? get knowMore {
     return _localizedValues[locale.languageCode]!['knowMore'];
@@ -591,6 +594,27 @@ class AppLocalizations {
 
   String? get searchSix {
     return _localizedValues[locale.languageCode]!['searchSix'];
+  }
+  String? get introTextOne {
+    return _localizedValues[locale.languageCode]!['introTextOne'];
+  }
+  String? get introTextTwo {
+    return _localizedValues[locale.languageCode]!['introTextTwo'];
+  }
+  String? get courseTitle {
+    return _localizedValues[locale.languageCode]!['courseTitle'];
+  }
+  String? get coursePreparedOne {
+    return _localizedValues[locale.languageCode]!['coursePreparedOne'];
+  }
+  String? get coursePreparedTwo {
+    return _localizedValues[locale.languageCode]!['coursePreparedTwo'];
+  }
+  String? get coursePreparedThree {
+    return _localizedValues[locale.languageCode]!['coursePreparedThree'];
+  }
+  String? get coursePreparedFour {
+    return _localizedValues[locale.languageCode]!['coursePreparedFour'];
   }
 }
 
