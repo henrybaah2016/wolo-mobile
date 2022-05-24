@@ -160,6 +160,11 @@ Map<String, String> english() {
     'coursePreparedTwo': 'Social Studies  (for   SHS 2)',
     'coursePreparedThree': 'Integrated Science ( for SHS 1)',
     'coursePreparedFour': 'English Language  ( for  SHS 1)',
+    'physics': 'Physics',
+    'chemistry': 'Chemistry',
+    'biology': 'Biology',
+    'francais': 'French',
+    'history': 'History',
 
   };
 }

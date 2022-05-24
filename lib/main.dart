@@ -12,6 +12,7 @@ import 'Theme/styles.dart';
 import 'language_cubit.dart';
 
 void main() {
+
   SystemChrome.setSystemUIOverlayStyle(
       SystemUiOverlayStyle(statusBarColor: Colors.transparent));
   runApp(Phoenix(child: kdemy()));

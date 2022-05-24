@@ -616,6 +616,22 @@ class AppLocalizations {
   String? get coursePreparedFour {
     return _localizedValues[locale.languageCode]!['coursePreparedFour'];
   }
+
+  String? get physics {
+    return _localizedValues[locale.languageCode]!['physics'];
+  }
+  String? get chemistry {
+    return _localizedValues[locale.languageCode]!['chemistry'];
+  }
+  String? get biology {
+    return _localizedValues[locale.languageCode]!['biology'];
+  }
+  String? get history {
+    return _localizedValues[locale.languageCode]!['history'];
+  }
+  String? get francais {
+    return _localizedValues[locale.languageCode]!['francais'];
+  }
 }
 
 class AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

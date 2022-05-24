@@ -529,7 +529,7 @@ class _OverviewTabState extends State<OverviewTab> {
                                   child: Row(
                                     children: [
                                       Text(
-                                        ov[index].subtitleTwo!,
+                                        ov[index].subtitleTwo,
                                         style: Theme.of(context)
                                             .textTheme
                                             .subtitle2!
@@ -540,7 +540,7 @@ class _OverviewTabState extends State<OverviewTab> {
                                       ),
                                       Spacer(),
                                       Text(
-                                        ov[index].subtitle!,
+                                        ov[index].subtitle,
                                         style: Theme.of(context)
                                             .textTheme
                                             .subtitle2!

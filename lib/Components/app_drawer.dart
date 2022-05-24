@@ -46,12 +46,12 @@ class _AppDrawerState extends State<AppDrawer> {
                   ),
                 ),
                 title: Text(
-                  'Joe Martins',
+                  'Sam Smith',
                   style: theme.textTheme.headline6,
                 ),
                 subtitle: Text(
                   locale.viewProfile!,
-                  style: TextStyle(color: Color(0xff828181))
+                  style: theme.textTheme.subtitle2!.copyWith(height: 1.5),
                 ),
               ),
             ),

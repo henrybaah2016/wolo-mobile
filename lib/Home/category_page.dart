@@ -14,20 +14,18 @@ class CategoryPage extends StatelessWidget {
     var theme = Theme.of(context);
     var locale = AppLocalizations.of(context)!;
     List<SubCategory> subCategories = [
-      SubCategory(locale.architecture, 68),
-      SubCategory(locale.artHistory, 53),
-      SubCategory(locale.design, 174),
-      SubCategory(locale.fashionDesign, 103),
-      SubCategory(locale.filmPhotography, 97),
-      SubCategory(locale.graphicDesign, 77),
-      SubCategory(locale.industrialDesign, 25),
-      SubCategory(locale.interiorDesign, 18),
+      SubCategory(locale.physics, 68),
+      SubCategory(locale.history, 53),
+      SubCategory(locale.francais, 174),
+      SubCategory(locale.chemistry, 103),
+      SubCategory(locale.biology, 97),
     ];
+
     List<SearchModel> searches = [
-      SearchModel(Assets.image1, locale.searchOne, 20.00),
-      SearchModel(Assets.image2, locale.searchTwo, 26.00),
-      SearchModel(Assets.image3, locale.uxDesignDescription, 25.00),
-      SearchModel(Assets.courseInfo, locale.searchThree, 35.00),
+      SearchModel(Assets.NewCourseTwo, locale.coursePreparedOne, 20.00),
+      SearchModel(Assets.NewCourseTwo, locale.coursePreparedOne, 40.00),
+      SearchModel(Assets.NewCourseTwo, locale.coursePreparedOne, 26.00),
+      SearchModel(Assets.NewCourseTwo, locale.coursePreparedOne, 25.00),
     ];
 
     return Scaffold(
@@ -47,21 +45,56 @@ class CategoryPage extends StatelessWidget {
             Padding(
               padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
               child: Text(
-                locale.recentSearches!,
+                'Mathematics',
                 style: theme.textTheme.subtitle1!
                     .copyWith(color: textColor, fontWeight: FontWeight.bold),
               ),
             ),
+
+            // Container(
+            //   height: 164,
+            //   margin: EdgeInsets.only(left:16,right:16,bottom:16),
+            //   child: ListView.builder(
+            //     physics: BouncingScrollPhysics(),
+            //     itemCount: searches.length,
+            //     scrollDirection: Axis.horizontal,
+            //     itemBuilder: (context, index) => Container(
+            //       width: MediaQuery.of(context).size.width / 2.5,
+            //       child: Column(
+            //         crossAxisAlignment: CrossAxisAlignment.start,
+            //         children: [
+            //           FadedScaleAnimation(
+            //             Image.asset(
+            //               searches[index].image,
+            //               height: 110,
+            //               width: MediaQuery.of(context).size.width / 2.8,
+            //             ),
+            //           ),
+            //           Text(
+            //             searches[index].title!,
+            //             maxLines: 2,
+            //             overflow: TextOverflow.ellipsis,
+            //           ),
+            //           Text(
+            //             '\GH${searches[index].price}',
+            //             style: theme.textTheme.caption,
+            //           ),
+            //         ],
+            //       ),
+            //     ),
+            //   ),
+            // ),
             Container(
-              height: 164,
-              margin: EdgeInsets.all(16),
-              child: ListView.builder(
+              margin: EdgeInsets.only(left:16,right:16,bottom:16),
+              child: GridView.builder(
                 physics: BouncingScrollPhysics(),
                 itemCount: searches.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => Container(
-                  width: MediaQuery.of(context).size.width / 2.5,
-                  child: Column(
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                ),
+                itemBuilder: (context, index) {
+                 return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       FadedScaleAnimation(
@@ -71,25 +104,33 @@ class CategoryPage extends StatelessWidget {
                           width: MediaQuery.of(context).size.width / 2.5,
                         ),
                       ),
-                      Text(
-                        searches[index].title!,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
+                      Padding(
+                        padding: const EdgeInsets.only(left:5,right:15),
+                        child: Text(
+                          searches[index].title!,
+                          maxLines: 2,
+                          overflow: TextOverflow.ellipsis,
+
+                        ),
                       ),
-                      Text(
-                        '\$${searches[index].price}',
-                        style: theme.textTheme.caption,
+                      Padding(
+                        padding: const EdgeInsets.only(left:5),
+                        child: Text(
+                          '\GH${searches[index].price}',
+                          style: theme.textTheme.caption,
+
+                        ),
                       ),
                     ],
-                  ),
-                ),
+                  );
+                },
               ),
             ),
             Divider(thickness: 8),
             Padding(
               padding: EdgeInsets.fromLTRB(16, 16, 16, 0),
               child: Text(
-                locale.selectSubcategories!,
+                'Categories',
                 style: theme.textTheme.subtitle1!
                     .copyWith(color: textColor, fontWeight: FontWeight.bold),
               ),
