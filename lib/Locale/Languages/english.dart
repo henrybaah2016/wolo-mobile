@@ -20,7 +20,12 @@ Map<String, String> english() {
     'signUp': 'Sign up',
     'alreadyRegistered': 'Already registered ?',
     'signInNow': 'Sign in now',
-    'home': 'Home',
+    'courses':'Courses',
+    'orders':'Orders',
+    'settings':'Settings',
+    'quiz':'Quiz',
+    'whishlist': 'Whishlist',
+    'assignments': 'Assignments',
     'ongoingCourses': 'Ongoing Courses',
     'bookmarked': 'Bookmarked',
     'support': 'Support',
@@ -154,7 +159,7 @@ Map<String, String> english() {
     'coursePreparedOne': 'Core Mathematics ( for SHS 1)',
     'coursePreparedTwo': 'Social Studies  (for   SHS 2)',
     'coursePreparedThree': 'Integrated Science ( for SHS 1)',
-    'coursePreparedFour': 'English Language ( for  SHS 1)',
+    'coursePreparedFour': 'English Language  ( for  SHS 1)',
 
   };
 }

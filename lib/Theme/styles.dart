@@ -37,7 +37,8 @@ final ThemeData appTheme = ThemeData(
       subtitle1: TextStyle(color: Colors.white),
       headline6: TextStyle(color: Colors.white, fontSize: 18.3),
       bodyText2: TextStyle(),
-      subtitle2: TextStyle(color: hintColor)),
+      subtitle2: TextStyle(color: hintColor),
+  ),
 );
 
 /// NAME         SIZE  WEIGHT  SPACING
@@ -49,6 +50,7 @@ final ThemeData appTheme = ThemeData(
 /// headline6    20.0  medium   0.15
 /// subtitle1    16.0  regular  0.15
 /// subtitle2    14.0  medium   0.1
+/// subtitle3    14.0  medium   0.1
 /// body1        16.0  regular  0.5   (bodyText1)
 /// body2        14.0  regular  0.25  (bodyText2)
 /// button       14.0  medium   1.25

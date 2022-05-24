@@ -9,7 +9,7 @@
     <application
         android:name="${applicationName}"
         android:label="Wolo"
-        android:icon="@drawable/wolo_logo_update">
+        android:icon="@drawable/wolo_logo_fav">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
