@@ -589,38 +589,38 @@ class _InstructorTabState extends State<InstructorTab> {
   @override
   Widget build(BuildContext context) {
     var locale = AppLocalizations.of(context)!;
-    List<InstructorItems> _InstructorItems = [
-      InstructorItems(
-          locale.courseDescription,
-          Icon(
-            Icons.info,
-            color: Theme.of(context).primaryColor,
-          )),
-      InstructorItems(
-          locale.shareThisCourse,
-          Icon(
-            Icons.share,
-            color: Theme.of(context).primaryColor,
-          )),
-      InstructorItems(
-          locale.addToBookmark,
-          Icon(
-            Icons.bookmark,
-            color: Theme.of(context).primaryColor,
-          )),
-      InstructorItems(
-          locale.reviewThisCourse,
-          Icon(
-            Icons.thumb_up,
-            color: Theme.of(context).primaryColor,
-          )),
-      InstructorItems(
-          locale.viewSimilarCourses,
-          Icon(
-            Icons.table_view_rounded,
-            color: Theme.of(context).primaryColor,
-          )),
-    ];
+    // List<InstructorItems> _InstructorItems = [
+    //   InstructorItems(
+    //       locale.courseDescription,
+    //       Icon(
+    //         Icons.info,
+    //         color: Theme.of(context).primaryColor,
+    //       )),
+    //   InstructorItems(
+    //       locale.shareThisCourse,
+    //       Icon(
+    //         Icons.share,
+    //         color: Theme.of(context).primaryColor,
+    //       )),
+    //   InstructorItems(
+    //       locale.addToBookmark,
+    //       Icon(
+    //         Icons.bookmark,
+    //         color: Theme.of(context).primaryColor,
+    //       )),
+    //   InstructorItems(
+    //       locale.reviewThisCourse,
+    //       Icon(
+    //         Icons.thumb_up,
+    //         color: Theme.of(context).primaryColor,
+    //       )),
+    //   InstructorItems(
+    //       locale.viewSimilarCourses,
+    //       Icon(
+    //         Icons.table_view_rounded,
+    //         color: Theme.of(context).primaryColor,
+    //       )),
+    // ];
     return SingleChildScrollView(
       physics: BouncingScrollPhysics(),
       child: Container(
@@ -637,20 +637,81 @@ class _InstructorTabState extends State<InstructorTab> {
               borderRadius: BorderRadius.circular(8),
               child: Container(
                   padding: EdgeInsets.symmetric(horizontal: 16, vertical: 20),
-                  child: ListView.builder(
-                    physics: NeverScrollableScrollPhysics(),
-                      padding: EdgeInsets.zero,
-                      itemCount: _InstructorItems.length,
-                      shrinkWrap: true,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          leading: _InstructorItems[index].icon,
-                          title: Text(
-                            _InstructorItems[index].title!,
-                            style: Theme.of(context).textTheme.bodyText1,
+                  child: Column(
+                    children: [
+                      Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(top:10),
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.all(Radius.circular(100)),
+                                child: Container(
+                                  height: 50,
+                                  width: 50,
+                                  child:ClipRRect(
+                                    borderRadius: BorderRadius.circular(100),
+                                    child:  Image.asset('assets/Images/teacher.jpeg',
+                                      scale: 3.5,
+                                      fit: BoxFit.cover,
+                                    ),
+                                  )
+                                ),
+                              ),
+                            ),
+                            Container(
+                              margin: EdgeInsets.only(top: 10,left:5,),
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 5.0,),
+                                    child: Text(
+                                      'George Kwesi Amoah',
+                                      textAlign: TextAlign.left,
+                                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(top: 4.0),
+                                    child: Text(
+                                      'B.Ed Science',
+                                      textAlign: TextAlign.left,
+                                      style: Theme.of(context).textTheme.subtitle2!.copyWith(
+                                        fontSize: 14,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+
+
+                          ],
+                        ),
+                      ),
+                      Container(
+                        child: Padding(
+                          padding:
+                          const EdgeInsets.only(top: 20.0,),
+                          child: Text(
+                            'George Kwesi Amoah is a graduate of Offinso Training College and the University of Education, Winneba where he studied B.Ed Science.He is been teaching Integrated Science at Accra Academy since 2010 whiles tutoring Science in the UEW Distance Education programme. He is currently an Assistant Supervisor of Examinations at Accra Academy and has been a WAEC examiner for the past two years. His passion is to have every student he teaches excel not just in the classroom but outside it.',
+                            style: TextStyle(
+                              color: Color(0xff8c8c8c),
+                              fontSize: 14,
+                              fontWeight: FontWeight.normal,
+                            ),
                           ),
-                        );
-                      })),
+                        ),
+                      ),
+                    ],
+                  ),),
             ),
           ],
         ),
